@@ -3,12 +3,12 @@ name: Website
 on:
   push:
     branches:
-      - master
+      - main
   pull_request:
 jobs:
   build:
     runs-on: ubuntu-latest
-    if: github.ref != 'refs/heads/master'
+    if: github.ref != 'refs/heads/main'
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
@@ -19,11 +19,10 @@ jobs:
         uses: shalzz/zola-deploy-action@master
         env:
           BUILD_DIR: website
-          #  TOKEN: ${{ secrets.TOKEN }}
           BUILD_ONLY: true
   build_and_deploy:
     runs-on: ubuntu-latest
-    if: github.ref == 'refs/heads/master'
+    if: github.ref == 'refs/heads/main'
     steps:
       - name: 'Checkout'
         uses: actions/checkout@master
