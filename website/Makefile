@@ -8,4 +8,4 @@ all: content_update
 	@zola build
 
 serve: content_update
-	@zola build
+	@zola serve
