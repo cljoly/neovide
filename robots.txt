@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://cljoly.github.io/neovide/sitemap.xml
